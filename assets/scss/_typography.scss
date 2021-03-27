@@ -1,0 +1,46 @@
+/*========================================================
+        Begin:For English
+=========================================================*/
+  @font-face {
+    font-family: sans-black;
+    src: url('~assets/fonts/NunitoSans-Black.ttf');
+  }
+  @font-face {
+    font-family: sans-extrabold;
+    src: url('~assets/fonts/NunitoSans-ExtraBold.ttf');
+  }
+  @font-face {
+    font-family: sans-bold;
+    src: url('~assets/fonts/NunitoSans-Bold.ttf');
+  }
+  @font-face {
+    font-family: sans-semibold;
+    src: url('~assets/fonts/NunitoSans-SemiBold.ttf');
+  }
+  @font-face {
+    font-family: sans-regular;
+    src: url('~assets/fonts/NunitoSans-Regular.ttf');
+  }
+  @font-face {
+    font-family: sans-light;
+    src: url('~assets/fonts/NunitoSans-Light.ttf');
+  }
+  @font-face {
+    font-family: sans-extralight;
+    src: url('~assets/fonts/NunitoSans-ExtraLight.ttf');
+  }
+  /*========================================================
+          End:For English
+  =========================================================*/
+
+  div, p, a, li, pre, td, del {
+    font-family: sans-light;
+  }
+
+  h1, h2 {
+    font-family: sans-bold;
+  }
+
+  h3, h4, h5, h6, b, strong {
+    font-family: sans-semibold;
+  }
