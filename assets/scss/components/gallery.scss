@@ -43,7 +43,7 @@
     }
   }
 
-  .show-more {
+  .show-more-grid {
     @apply relative h-11 md:h-auto border-gray-800 md:border-0 transition duration-300 bg-gray-50 hover:bg-gray-800 my-3 md:my-0 px-0;
   
     &:hover {
@@ -56,12 +56,12 @@
       @apply absolute transition duration-500 flex items-center justify-center top-0 bottom-0 left-0 right-0 md:px-8;
   
       p {
-        @apply text-sm md:text-2xl text-center;
+        @apply text-sm xl:text-2xl text-center;
         font-family: sans-bold;
       }
   
       .after-hover {
-        @apply hidden;
+        @apply hidden lg:text-lg;
       }
   
       &:hover {
@@ -75,8 +75,8 @@
     }
   }
 
-  @media (max-width: 768px) {
-    .show-more {
+  @media (max-width: 548px) {
+    .show-more-grid {
       border-width: 3px;
     }
   }
