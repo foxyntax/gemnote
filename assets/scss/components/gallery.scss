@@ -45,7 +45,6 @@
 
   .show-more {
     @apply relative h-11 md:h-auto border-gray-800 md:border-0 transition duration-300 bg-gray-50 hover:bg-gray-800 my-3 md:my-0 px-0;
-    border-width: 3px;
   
     &:hover {
       p {
@@ -73,5 +72,11 @@
           @apply block;
         }
       }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .show-more {
+      border-width: 3px;
     }
   }
