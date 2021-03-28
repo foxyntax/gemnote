@@ -2,88 +2,90 @@
   <div id="dashboard">
     <h1>Welcome to Gemnote, {{ $store.state.user.firstName }}! </h1>
     <article>
-      <!-- First Row -->
-      <div class="row">
-        <div id="orders">
-          <div>
-            <h3 class="card-title">Total number of orders this month</h3>
-            <p class="card-data">{{ $store.state.data.totalOrders | toFormattedInt }}</p>
-          </div>
-
-          <div>
-            <h3 class="card-title">Average number of shipments/month</h3>
-            <div class="flex justify-between">
-              <p class="card-data">{{ $store.state.data.averageShipments | toFormattedInt }}</p>
-              <button>View Order</button>
+      <transition-group enter-active-class="animated slideInUp fast" mode="out-in" appear>
+        <!-- First Row -->
+        <div class="row" key="first">
+          <div id="orders">
+            <div>
+              <h3 class="card-title">Total number of orders this month</h3>
+              <p class="card-data">{{ $store.state.data.totalOrders | toFormattedInt }}</p>
             </div>
-          </div>
-        </div>
 
-        <div id="inventory">
-          <div>
-            <div id="donut-chart">
-              <apexchart
-                :width="donut.width"
-                height="auto"
-                type="donut"
-                :options="donut.options"
-                :series="donut.series"
-              ></apexchart>
-            </div>
-            <div class="flex-grow">
-              <h3 class="card-title">Current Inventory</h3>
+            <div>
+              <h3 class="card-title">Average number of shipments/month</h3>
               <div class="flex justify-between">
-                <p class="card-data">{{ $store.state.data.inventory | toFormattedInt }}</p>
-                <button>Mangage inventory</button>
+                <p class="card-data">{{ $store.state.data.averageShipments | toFormattedInt }}</p>
+                <button>View Order</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="inventory">
+            <div>
+              <div id="donut-chart">
+                <apexchart
+                  :width="donut.width"
+                  height="auto"
+                  type="donut"
+                  :options="donut.options"
+                  :series="donut.series"
+                ></apexchart>
+              </div>
+              <div class="flex-grow">
+                <h3 class="card-title">Current Inventory</h3>
+                <div class="flex justify-between">
+                  <p class="card-data">{{ $store.state.data.inventory | toFormattedInt }}</p>
+                  <button>Mangage inventory</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- Second Row -->
-      <div id="trends">
-        <div class="card px-2 md:px-5">
-          <div class="flex flex-row justify-between px-2 md:px-0">
-            <h3 class="card-title">Trending gifts in your store</h3>
+        <!-- Second Row -->
+        <div id="trends" key="second">
+          <div class="card px-2 md:px-5">
+            <div class="flex flex-row justify-between px-2 md:px-0">
+              <h3 class="card-title">Trending gifts in your store</h3>
 
-            <div class="card-head-btn">
+              <div class="card-head-btn">
+                <button class="py-2 px-4">Send a gift</button>
+              </div>
+            </div>
+
+            <Gallery showMoreUrl="#" :hiddenItems="3" :data="$store.state.data.trendingGifts" />
+
+            <div class="mobile-actions">
               <button class="py-2 px-4">Send a gift</button>
             </div>
           </div>
-
-          <Gallery showMoreUrl="#" :hiddenItems="3" :data="$store.state.data.trendingGifts" />
-
-          <div class="mobile-actions">
-            <button class="py-2 px-4">Send a gift</button>
-          </div>
         </div>
-      </div>
-      <!-- Last Row -->
-      <div id="reports">
-        <div class="card px-1 md:px-5">
-          <div class="flex flex-row justify-between px-2 md:px-0">
-            <h3 class="card-title">Total gifts sent this year</h3>
+        <!-- Last Row -->
+        <div id="reports" key="third">
+          <div class="card px-1 md:px-5">
+            <div class="flex flex-row justify-between px-2 md:px-0">
+              <h3 class="card-title">Total gifts sent this year</h3>
 
-            <div class="card-head-btn">
+              <div class="card-head-btn">
+                <button class="py-2 px-4">Download report</button>
+              </div>
+            </div>
+
+            <div class="w-full">
+              <apexchart
+                  width="100%"
+                  height="300px"
+                  type="bar"
+                  :options="column.options"
+                  :series="column.series"
+                ></apexchart>
+            </div>
+
+            <div class="mobile-actions">
               <button class="py-2 px-4">Download report</button>
             </div>
           </div>
-
-          <div class="w-full">
-            <apexchart
-                width="100%"
-                height="300px"
-                type="bar"
-                :options="column.options"
-                :series="column.series"
-              ></apexchart>
-          </div>
-
-          <div class="mobile-actions">
-            <button class="py-2 px-4">Download report</button>
-          </div>
         </div>
-      </div>
+      </transition-group>
     </article>
   </div>
 </template>
