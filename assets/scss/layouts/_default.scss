@@ -4,7 +4,7 @@ $aside_width: 320px;
     @apply flex justify-end flex-wrap;
 
     > header {
-        @apply sticky md:hidden w-full h-12 top-0 left-0 right-0 py-2 px-3 z-50;
+        @apply sticky xl:hidden w-full h-12 top-0 left-0 right-0 py-2 px-3 z-50;
         background: $primary-color;
         color: $secondary_text_color;
 
@@ -36,12 +36,12 @@ $aside_width: 320px;
     }
 
     aside {
-        @apply hidden md:block z-50;
+        @apply hidden xl:block z-50;
         width: $aside_width;
         min-height: 100vh;
 
         div {
-            @apply fixed top-10 md:top-0 bottom-0 left-0 right-0 py-5 md:py-20;
+            @apply fixed top-10 xl:top-0 bottom-0 left-0 right-0 py-5 xl:py-20;
             width: $aside_width;
             background: $primary-color;
             color: $secondary_text_color;
@@ -50,13 +50,13 @@ $aside_width: 320px;
                 @apply px-14;
 
                 img {
-                    @apply hidden md:block;
+                    @apply hidden xl:block;
                     width: 75%;
                     height: auto;
                 }
 
                 h3 {
-                    @apply mt-5 md:mt-16 pb-8 mb-8;
+                    @apply mt-5 xl:mt-16 pb-8 mb-8;
                     border-bottom: 1px solid $lighten_color;
                 }
             }
@@ -97,7 +97,7 @@ $aside_width: 320px;
         }
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 1024px) {
         aside, aside div {
             @apply w-full block fixed top-10;
             left: -100% !important;
@@ -108,16 +108,32 @@ $aside_width: 320px;
             -o-transition: .4s all ease-in-out;
         }
 
-        aside h3 {
-            @apply text-xl
-        }
-
         .aside-for-mobile, .aside-for-mobile div {
             @apply left-0 #{!important};
         }
     }
 
+    @media (max-width: 1024px) and (min-width: 569px) {
+        aside h3 {
+            @apply text-3xl
+        }
+
+        aside li {
+            @apply text-2xl py-4 #{!important};
+        }
+    }
+
+    @media (max-width: 568px) {
+        aside h3 {
+            @apply text-xl
+        }
+
+        aside li {
+            @apply text-lg py-2 #{!important};
+        }
+    }
+
     section {
-        @apply flex-grow px-3 lg:px-10 xl:px-48 2xl:px-56 py-8 lg:py-24;
+        @apply flex-grow px-3 lg:px-2 xl:px-48 2xl:px-56 py-8 lg:py-24;
     }
 }

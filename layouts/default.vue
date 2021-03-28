@@ -2,14 +2,15 @@
   <div id="layout">
     <!-- Mobile Header -->
     <header>
-        <div>
-          <img src="/gemnote-logo.png" alt="Gemnote logo">
-          <div class="menu-icon" @click="showMobileNav = !showMobileNav">
-            <div class="bar-1"></div>
-            <div class="bar-2"></div>
-            <div class="bar-3"></div>
-          </div>
+      <div>
+        <img src="/gemnote-logo.png" alt="Gemnote logo">
+
+        <div class="menu-icon" @click="showMobileNav = !showMobileNav">
+          <div class="bar-1"></div>
+          <div class="bar-2"></div>
+          <div class="bar-3"></div>
         </div>
+      </div>
     </header>
 
     <div class="w-full flex justify-between">
