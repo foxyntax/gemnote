@@ -15,3 +15,14 @@ button {
     }
 }
 
+.btn-secondary {
+    background: lighten($primary-color, 5%);
+    border: 3px solid lighten($primary-color, 5%);
+    color: $secondary_text_color;
+
+    &:hover {
+        background: $primary-color;
+        border: 3px solid $primary-color;
+    }
+}
+

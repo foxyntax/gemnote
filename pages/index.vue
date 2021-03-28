@@ -55,7 +55,7 @@
             <Gallery showMoreUrl="#" :hiddenItems="3" :data="$store.state.data.trendingGifts" />
 
             <div class="mobile-actions">
-              <button class="py-2 px-4">Send a gift</button>
+              <button class="btn-secondary py-2 px-4">Send a gift</button>
             </div>
           </div>
         </div>
