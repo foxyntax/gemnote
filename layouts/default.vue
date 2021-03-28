@@ -43,6 +43,14 @@
 
 <script>
 export default {
+  watch: {
+    showMobileNav (status) {
+      // Stop Scrolling when mini aside bar is being shown
+      (status === true)
+        ? document.getElementsByTagName('BODY')[0].classList.add('overflow-hidden')
+        : document.getElementsByTagName('BODY')[0].classList.remove('overflow-hidden')
+    }
+  },
   data: () => ({
     showMobileNav: false,
     navLinks: [
