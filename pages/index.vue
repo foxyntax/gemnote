@@ -142,6 +142,7 @@ export default {
       }
     }
   }),
+  // You can get SEO information from server before rendering page.
   head: () => ({
     title: 'Gemnote | Dashboard',
     meta: [
