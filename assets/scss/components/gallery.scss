@@ -19,7 +19,7 @@
           @apply h-full flex items-center justify-center;
   
           h4 {
-            @apply text-xl text-white transition duration-500 opacity-0;
+            @apply text-sm xl:text-xl text-white transition duration-500 opacity-0;
           }
         }
       }
@@ -43,40 +43,40 @@
     }
   }
 
-  .show-more-grid {
-    @apply relative h-11 md:h-auto border-gray-800 md:border-0 transition duration-300 bg-gray-50 hover:bg-gray-800 my-3 md:my-0 px-0;
-  
-    &:hover {
-      p {
-        color: white;
-      }
-    }
-  
-    .title-wrapper {
-      @apply absolute transition duration-500 flex items-center justify-center top-0 bottom-0 left-0 right-0 md:px-8;
-  
-      p {
-        @apply text-sm xl:text-2xl text-center;
-        font-family: sans-bold;
-      }
-  
-      .after-hover {
-        @apply hidden lg:text-lg;
-      }
-  
-      &:hover {
-        .before-hover {
-          @apply hidden;
-        }
-        .after-hover {
-          @apply block;
-        }
-      }
+.show-more-grid {
+  @apply relative h-11 md:h-auto border-gray-800 md:border-0 transition duration-300 bg-gray-50 hover:bg-gray-800 my-3 md:my-0 px-0;
+
+  &:hover {
+    p {
+      color: white;
     }
   }
 
-  @media (max-width: 548px) {
-    .show-more-grid {
-      border-width: 3px;
+  .title-wrapper {
+    @apply absolute transition duration-500 flex items-center justify-center top-0 bottom-0 left-0 right-0 md:px-8;
+
+    p {
+      @apply text-xs lg:text-xl xl:text-2xl text-center;
+      font-family: sans-bold;
+    }
+
+    .after-hover {
+      @apply hidden;
+    }
+
+    &:hover {
+      .before-hover {
+        @apply hidden;
+      }
+      .after-hover {
+        @apply block;
+      }
     }
   }
+}
+
+@media (max-width: 548px) {
+  .show-more-grid {
+    border-width: 3px;
+  }
+}
