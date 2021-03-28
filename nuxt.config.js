@@ -7,11 +7,10 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'gemnote',
+    title: 'Gemnote',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' },
-      { hid: 'description', name: 'description', content: '' }
+      { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -20,7 +19,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '@/assets/css/animate.css'
+    '~/assets/css/animate.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -47,21 +46,12 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     // https://dev.to/ceppeu/using-sass-global-variables-in-nuxt-js-j0k
+    // NOTE: Only 10.1.1v works
 		'@nuxtjs/style-resources'
   ],
 
-  // Using SASS global variables in Nuxt JS
-	styleResources: {
-		scss: ['./assets/scss/main.scss']
-	},
-
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {
-    baseURL: 'https://gemnote.com/api/',
-		headers: {
-			'Content-Type': 'application/json',
-			'Access-Control-Allow-Origin': '*'
-		}
+  // Build Configuration: https://go.nuxtjs.dev/config-build
+  build: {
   },
 
   loading: {
@@ -74,6 +64,21 @@ export default {
 		color: 'black',
 		background: 'transparent'
 	},
+
+  /**
+   * =================================
+   * Modules Configuration
+   * =================================
+   */
+
+  // Axios module configuration: https://go.nuxtjs.dev/config-axios
+  axios: {
+    baseURL: 'https://gemnote.com/api/',
+		headers: {
+			'Content-Type': 'application/json',
+			'Access-Control-Allow-Origin': '*'
+		}
+  },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
@@ -93,7 +98,8 @@ export default {
 		}
   },
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-  }
+  // Using SCSS global variables in Nuxt JS
+	styleResources: {
+		scss: ['~/assets/scss/main.scss']
+	}
 }
