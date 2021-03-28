@@ -1,62 +1,63 @@
 <template>
-  <div>
-    <Nuxt />
+  <div id="layout">
+    <!-- Mobile Header -->
+    <header>
+        <div>
+          <img src="/gemnote-logo.png" alt="Gemnote logo">
+          <div class="menu-icon" @click="showMobileNav = !showMobileNav">
+            <div class="bar-1"></div>
+            <div class="bar-2"></div>
+            <div class="bar-3"></div>
+          </div>
+        </div>
+    </header>
+
+    <div class="w-full flex justify-between">
+      <!-- Asider -->
+      <transition enter-active-class="animated slideInLeft fast" mode="out-in" appear>
+        <aside :class="{ 'aside-for-mobile': showMobileNav }">
+          <div>
+            <header>
+              <img src="/gemnote-logo.png" alt="Gemnote logo">
+              <h3>{{ $store.state.user.firstName + ' ' + $store.state.user.lastName }}</h3>
+            </header>
+
+            <nav>
+              <ul>
+                <li v-for="(item, index) in navLinks" :key="index">
+                  <NuxtLink :to="item.url"> {{ item.name }} </NuxtLink>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </aside>
+      </transition>
+
+      <section>
+        <Nuxt />
+      </section>
+    </div>
   </div>
 </template>
 
-<style>
-html {
-  font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+<script>
+export default {
+  data: () => ({
+    showMobileNav: false,
+    navLinks: [
+      { name: 'Dashboard', url: '/' },
+      { name: 'Orders', url: '/orders' },
+      { name: 'Send a gifts', url: '/sending-gift' },
+      { name: 'Users', url: '/users' },
+      { name: 'Integrations', url: '/integrations' },
+      { name: 'Settings', url: '/settings' },
+      { name: 'Logout', url: '/logout' }
+    ]
+  })
 }
+</script>
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-}
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
-}
+<style lang="scss">
+// Start Sass from External resources
+#layout {}
 </style>
