@@ -44,12 +44,21 @@
   }
 
 .show-more-grid {
-  @apply relative h-11 md:h-auto border-gray-800 md:border-0 transition duration-300 bg-gray-50 hover:bg-gray-800 my-3 md:my-0 px-0;
-
+  @apply relative h-11 md:h-auto border-gray-800 md:border-0 transition duration-300 bg-gray-50 hover:bg-gray-900 my-3 md:my-0 px-0;
+  
   &:hover {
+    
     p {
       color: white;
     }
+
+    img {
+      @apply opacity-50 #{!important};
+    }
+  }
+
+  img {
+    @apply hidden xl:block w-full h-auto transition duration-500 opacity-5 z-0;
   }
 
   .title-wrapper {

@@ -11,6 +11,7 @@
     </div>
 
     <div class="show-more-grid" v-show="hiddenItems != 0">
+      <img src="/brand_gem.png" alt="show more">
       <NuxtLink :to="showMoreUrl" class="title-wrapper">
         <p class="before-hover">You also have {{ hiddenItems }} trend gifts!</p>
         <p class="after-hover">See more ...</p>
