@@ -10,6 +10,14 @@
             @apply flex justify-between flex-wrap md:flex-nowrap;
         }
 
+        .mobile-actions {
+            @apply md:hidden w-full;
+            
+            > * {
+                @apply w-full;
+            }
+        }
+
         #orders {
             @apply card flex justify-between flex-wrap w-full md:w-1/2 lg:w-7/12 md:mr-3 lg:mr-8;
 

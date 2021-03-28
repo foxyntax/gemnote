@@ -52,6 +52,10 @@
           </div>
 
           <Gallery showMoreUrl="#" :hiddenItems="3" :data="$store.state.data.trendingGifts" />
+
+          <div class="mobile-actions">
+            <button class="py-2 px-4">Send a gift</button>
+          </div>
         </div>
       </div>
       <!-- Last Row -->
@@ -64,6 +68,7 @@
               <button class="py-2 px-4">Download report</button>
             </div>
           </div>
+
           <div class="w-full">
             <apexchart
                 width="100%"
@@ -72,6 +77,10 @@
                 :options="column.options"
                 :series="column.series"
               ></apexchart>
+          </div>
+
+          <div class="mobile-actions">
+            <button class="py-2 px-4">Download report</button>
           </div>
         </div>
       </div>

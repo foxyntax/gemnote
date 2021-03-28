@@ -1,7 +1,8 @@
 button {
-    @apply text-sm font-bold px-3;
+    @apply text-sm px-3;
     border: 3px solid $primary-color;
     color: $primary-color;
+    font-family: sans-bold;
     transition: .3s all ease-in-out;
     -webkit-transition: .2s all ease-in-out;
     -moz-transition: .2s all ease-in-out;
