@@ -1,6 +1,6 @@
 /** Our Global Style **/
-@import "takwash/colors";
-@import "takwash/typography";
+@import "colors";
+@import "typography";
 
 /**
 
@@ -9,3 +9,19 @@ Components
 **/
 @import "components/cards";
 @import "components/buttons";
+@import "components/gallery";
+
+
+/**
+
+Layouts
+
+**/
+@import "layouts/default";
+
+/**
+
+Layouts
+
+**/
+@import "pages/dashboard";

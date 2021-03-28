@@ -1,0 +1,25 @@
+.card {
+    @apply h-auto overflow-hidden px-2 border-2 md:border-4 md:px-5 py-8 md:py-6 mb-5 md:mb-8;
+    border-color: $darken_color;
+}
+
+.card-title {
+    @apply text-lg md:text-xl mb-5;
+    min-height: 60px;
+    font-family: sans-bold;
+}
+
+@media (max-width: 768px) {
+    .card-title {
+        min-height: 40px;
+    }
+}
+
+.card-data {
+    @apply text-3xl md:text-4xl;
+    font-family: sans-extrabold;
+}
+
+.card-head-btn {
+    @apply hidden md:block;
+}
