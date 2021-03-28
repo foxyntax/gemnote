@@ -21,6 +21,8 @@ Animate.css is a library of ready-to-use, cross-browser animations for use in yo
 ApexCharts is a modern charting library that helps developers to create beautiful and interactive visualizations for web pages.
 It is an open-source project licensed under MIT and is free to use in commercial applications.
 
+**Note**: Donut chart couldn't be responsive, it's been designed as an adaptive chart.
+
 - #### Another dependencies:
 Go [here](https://github.com/foxyntax/gemnote/blob/master/package.json) and check all packages that have been used for this page.
 
