@@ -9,6 +9,7 @@
         </div>
       </NuxtLink>
     </div>
+
     <div class="show-more-grid" v-show="hiddenItems != 0">
       <NuxtLink :to="showMoreUrl" class="title-wrapper">
         <p class="before-hover">You also have {{ hiddenItems }} trend gifts!</p>
