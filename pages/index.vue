@@ -73,7 +73,7 @@
             <div class="w-full">
               <apexchart
                   width="100%"
-                  height="300px"
+                  height="500px"
                   type="bar"
                   :options="column.options"
                   :series="column.series"
@@ -124,7 +124,7 @@ export default {
         data: [150, 159, 120, 90, 170, 164, 100, 50, 94, 35, 140, 167]
       }],
       options: {
-        colors: ['gray'],
+        colors: ['c8c8c8'],
         dataLabels: {
           enabled: false
         },

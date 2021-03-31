@@ -1,4 +1,4 @@
-$aside_width: 320px;
+$aside_width: 250px;
 
 #layout {
     @apply flex justify-end flex-wrap;
@@ -41,7 +41,7 @@ $aside_width: 320px;
         min-height: 100vh;
 
         div {
-            @apply fixed top-10 xl:top-0 bottom-0 left-0 right-0 py-5 xl:py-20;
+            @apply fixed top-10 xl:top-0 bottom-0 left-0 right-0 py-5 xl:pb-20 xl:pt-12;
             width: $aside_width;
             background: $primary-color;
             color: $secondary_text_color;
@@ -51,7 +51,7 @@ $aside_width: 320px;
 
                 img {
                     @apply hidden xl:block;
-                    width: 75%;
+                    width: 100%;
                     height: auto;
                 }
 
